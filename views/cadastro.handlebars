@@ -1,12 +1,25 @@
-<h1>Cadastro</h1>
-<form id="form-cadastro">
-    <label for="nome">nome</label>
-    <input type="text" id="nome" name="nome">
-    <label for="email">email</label>
-    <input type="text" id="email" name="email">
-    <label for="Senha">Senha</label>
-    <input type="text" id="senha" name="senha"> 
-    <button type="submit">Enviar</button>
-</form>
-<div id="resultado"></div>
-<script src="/js/inputvalidation.js"></script>
+<main id="login">
+    
+    <img src="/imgs/cadastroDia.png" alt="">
+
+    <div>
+        <h1>Olá,<br>Seja bem vindo...</h1>
+        <p>Vamos nos conhecer?</p>
+        <form id="form-cadastro">
+            <label for="nome">Nome</label><br>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome:"><br>
+            <label for="email">Email</label><br>
+            <input type="text" id="email" name="email" placeholder="Digite seu e-mail:"><br>
+            <label for="senha">Senha</label><br>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha:"><br>
+            <div class="checkboxDiv">
+                <input type="checkbox" class="checkboxInput">
+                <span>Ver senha</span>
+            </div>
+            <button type="submit">Se Cadastrar</button>
+        </form>
+        <div id="resultado" class="direita"></div>
+        <script src="/js/inputvalidation.js"></script>
+    </div>
+    
+</main>

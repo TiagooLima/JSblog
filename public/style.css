@@ -1,2 +1,282 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+:root{
+    --laranja-botoes: rgb(255, 208, 0)
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+    font-family: poppins, rubik;
+}
+
+/*PROPRIEDADES GERAIS*/
+body{
+    min-height: 100vh;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/***layouts***/
+
+.margem{
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*header*/
+
+header .logo{
+    font-family:  poppins, sans-serif;
+    font-size: 3em;
+    font-weight: 500;
+    font-style: italic;
+}
+
+header .logo>span{
+    color: rgb(255, 208, 0);
+    font-weight: 700;
+}
+
+header>.margem{
+    display: flex;
+    align-items: center;
+}
+
+header ul{
+    list-style-type: none;
+    flex-grow: 1;
+    display: flex;
+}
+
+header ul a{
+    font: 450 1em poppins, rubik, sans-serif;
+    padding: 10px 20px;
+    margin-left: 25px;
+    border-radius: 20px;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+header ul a:hover{
+    background-color: rgb(231, 231, 231);
+}
+
+header a>span{
+    font: 450 0.6em poppins, rubik, sans-serif;
+    position: relative;
+    top: -8px;
+}
+
+.finalHeader{
+    display: flex;
+    align-items: center;
+}
+
+.finalHeader a{
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: 3px solid var(--laranja-botoes);
+    font: 450 1em rubik, poppins, sans-serif;
+    height: fit-content;
+    border-radius: 25px;
+    transition: 0.2s ease;
+}
+
+.finalHeader a:hover{
+    background-color: var(--laranja-botoes);
+    color: white;
+}
+
+/*Login Page*/
+
+#login{
+    display: flex;
+    align-items: center;
+}
+
+#login>div{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+}
+
+img{
+    width: 50vw;
+    min-height: 90vh;
+    object-fit: cover;
+    border-radius: 35px;
+    margin: 5px 15px;
+}
+
+#login h1{
+    font-size: 3em;
+    text-align: center;
+    margin: 5px 20px;
+}
+
+#login p{
+    font-size: 1.4em;
+    color: darkgray;
+}
+
+form{
+    padding: 15px 0;
+}
+
+form label{
+    font-size: 1.3em;
+    font-weight: 450;
+}
+
+#form-cadastro label{
+    text-align: right;
+}
+
+form>input{
+    min-width: 375px;
+    width: 28vw;
+    max-width: 650px;
+    height: 35px;
+    margin-bottom: 25px;
+    border: 2px solid darkgray;
+    border-radius: 25px;
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+form input:focus{
+    border: 3px solid var(--laranja-botoes);
+    outline: none
+}
+
+form>input[name='senha']::placeholder{
+    font-size: 0.6em;
+}
+
+#senha{
+    font-size: 2em;
+}
+
+/*CHECKBOX feito por Linear*/
+.checkboxDiv .checkboxInput {
+    appearance: none;
+    background-color: #dfe1e4;
+    border-radius: 72px;
+    border-style: none;
+    flex-shrink: 0;
+    height: 30px;
+    margin: 0;
+    position: relative;
+    width: 40px;
+}
+
+.checkboxDiv .checkboxInput::before {
+    bottom: -6px;
+    content: "";
+    left: -6px;
+    position: absolute;
+    right: -6px;
+    top: -6px;
+}
+
+.checkboxDiv .checkboxInput,
+.checkboxDiv .checkboxInput::after {
+    transition: all 100ms ease-out;
+}
+
+.checkboxDiv .checkboxInput::after {
+    background-color: #fff;
+    border-radius: 50%;
+    content: "";
+    height: 24px;
+    left: 3px;
+    position: absolute;
+    top: 3px;
+    width: 24px;
+}
+
+.checkboxDiv input[type=checkbox] {
+    cursor: default;
+}
+
+.checkboxDiv .checkboxInput:hover {
+    background-color: #c9cbcd;
+}
+
+.checkboxDiv .checkboxInput:checked {
+    background-color: #e0d24c;
+}
+
+.checkboxDiv .checkboxInput:checked::after {
+    background-color: #fff;
+    left: 13px;
+}
+
+.checkboxDiv :focus:not(.focus-visible) {
+    outline: 0;
+}
+
+.checkboxDiv .checkboxInput:checked:hover {
+    background-color: #e0e250;
+}
+/**/
+.checkboxDiv{
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.checkboxDiv span{
+    font-weight: 350;
+    font-size: 1.1em;
+    padding: 10px;
+}
+
+form button{
+    padding: 5px 15px;
+    border: 3px solid rgb(255, 208, 0);
+    font: 450 1.2em rubik, poppins, sans-serif;
+    height: fit-content;
+    border-radius: 25px;
+    transition: 0.2s ease;
+    background-color: white;
+}
+
+form button:hover{
+    background-color: rgb(255, 208, 0);
+    color: rgb(95, 95, 95);
+    cursor: pointer;
+}
+
+
+
+#resultado{
+    opacity: 0;
+    background-color: red;
+    border-radius: 12px;
+    color:white;
+    padding: 7px 18px;
+    font-size: 1.4em;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+}
+
+.direita{
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+}
+
+.esquerda{
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+}

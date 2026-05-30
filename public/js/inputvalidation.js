@@ -1,6 +1,21 @@
 const formCadastro = document.getElementById('form-cadastro')
 const formLogin = document.getElementById('form-login')
+const checkSenha = document.querySelector('.checkboxInput')
+const inputSenha = document.getElementsByTagName('senha')
 const divResultado = document.getElementById('resultado')
+
+let c = 0
+checkSenha.addEventListener('click', e => {
+    if(c === 0){
+        inputSenha.style.fontSize = '1.2em'
+        inputSenha.setAttribute("type", "text");
+        c++
+    }else{
+        inputSenha.setAttribute("type", "password");
+        inputSenha.style.fontSize = '2em'
+        c--
+    }
+})
 
 if(formCadastro){
     formCadastro.addEventListener('submit', async e => {
@@ -18,7 +33,17 @@ if(formCadastro){
 
         const dados = await resposta.json()
         if(!dados.sucesso){
-            return divResultado.textContent = dados.message    
+            divResultado.textContent = dados.message  
+            divResultado.style.opacity = 1
+
+            divResultado.addEventListener('click', () => {
+                divResultado.style.opacity = 0;
+            })
+            
+            setTimeout(() => {
+                divResultado.style.opacity = '0';
+            }, 1000*8)
+            return
         }
 
         window.location.href = '/login'
@@ -40,7 +65,17 @@ if(formLogin){
 
         const dados = await resposta.json()
         if(!dados.sucesso){
-            return divResultado.textContent = dados.message    
+            divResultado.textContent = dados.message  
+            divResultado.style.opacity = 1
+
+            divResultado.addEventListener('click', () => {
+                divResultado.style.opacity = 0;
+            })
+            
+            setTimeout(() => {
+                divResultado.style.opacity = '0';
+            }, 1000*8)
+            return
         }
 
         window.location.href = '/'

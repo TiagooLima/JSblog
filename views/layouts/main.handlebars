@@ -3,30 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sitezao</title>
+    <title>JSblog</title>
     <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="/imgs/js.png" type="image/x-icon">
 </head>
 <body>
     <div id="container">
-        <header>
-            <div class="logo"></div>
 
-            <ul>
-                <li><a href="/">Home</a></li>
-            </ul>
+        <header> <!--Começo do Cabeçalho-->
+            <div class="margem">
+                <a href="/">
+                    <div class="logo"><span>JS</span>blog.</div>
+                </a>
 
-            {{#if logado}}
-            <p>Bem vindo, {{usuario.P_nome}}</p>
-            <a href="/logout">Deslogar</a>
-            {{else}}
-                <a href="/login">Login</a>
-                <a href="/cadastro">Cadastro</a>
-            {{/if}}
-        </header>        
+                <ul>
+                    <li><a href="/">Artigos<span>(qtd)</span></a></li>
+                    <li><a href="/">Escreva Blogs</a></li>
+                    <li><a href="/">Fale comigo</a></li>
+                </ul>
+
+                {{#if logado}}
+                    <div class="finalHeader">
+                        <p>Bem vindo, {{usuario.P_nome}}</p>
+                        <a href="/logout">Deslogar</a>
+                    </div>
+                {{else}}
+                    <div class="finalHeader">
+                        <a href="/login">Login</a>
+                        <a href="/cadastro">Cadastro</a>
+                    </div>
+                {{/if}}
+            </div>
+        </header> <!--Fim do Cabeçalho-->
+
         {{{body}}}
-        <footer>
 
-        </footer>
+        <footer> <!--Começo do Rodapé-->
+
+        </footer> <!--Fim do Rodapé-->
     </div>
 </body>
 </html>

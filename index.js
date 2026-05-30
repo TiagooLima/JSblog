@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(express.static('public'))
 app.use(session({
-    secret: 'OPA',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -25,25 +25,32 @@ app.use((req, res, next) => {
     next()
 })
 
+/*
+ROTAS
+*/
+
+//login
 const rotaLogin = require('./routes/login')
 app.use('/login', rotaLogin)
 
+//rota de destruição de sessão
 app.get('/logout', (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       return res.status(500).send('Erro ao tentar fazer logout.');
     }
 
-    // Limpa o cookie do navegador (substitua 'connect.sid' pelo nome configurado na sua aplicação)
     res.clearCookie('connect.sid'); 
 
     res.redirect('/');
   });
 });
 
+//cadastro
 const rotaCadastro = require('./routes/cadastro')
 app.use('/cadastro', rotaCadastro)
 
+//rota principal
 app.get('/', (req, res) => {
     res.render('home')
 })
