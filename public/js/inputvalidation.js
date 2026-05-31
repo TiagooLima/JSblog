@@ -1,7 +1,7 @@
 const formCadastro = document.getElementById('form-cadastro')
 const formLogin = document.getElementById('form-login')
 const checkSenha = document.querySelector('.checkboxInput')
-const inputSenha = document.getElementsByTagName('senha')
+const inputSenha = document.getElementById('senha')
 const divResultado = document.getElementById('resultado')
 
 let c = 0

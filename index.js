@@ -51,8 +51,18 @@ const rotaCadastro = require('./routes/cadastro')
 app.use('/cadastro', rotaCadastro)
 
 //rota principal
-app.get('/', (req, res) => {
-    res.render('home')
+app.get('/', async (req, res) => {
+    const {data, err} = await supabase.from('noticias_banner').select('*')
+    if(err){
+        console.log(err);
+    }
+
+    const noticia1 = data[0]
+    const noticia2 = data[1]
+    const noticia3 = data[2]
+    
+
+    res.render('home', {noticia1, noticia2, noticia3})
 })
 
 app.listen(3000, () => {

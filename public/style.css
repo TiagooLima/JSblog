@@ -108,7 +108,7 @@ header a>span{
     text-align: left;
 }
 
-img{
+#login img, #cadastro img{
     width: 50vw;
     min-height: 90vh;
     object-fit: cover;
@@ -155,10 +155,6 @@ form>input{
 form input:focus{
     border: 3px solid var(--laranja-botoes);
     outline: none
-}
-
-form>input[name='senha']::placeholder{
-    font-size: 0.6em;
 }
 
 #senha{
@@ -256,8 +252,6 @@ form button:hover{
     cursor: pointer;
 }
 
-
-
 #resultado{
     opacity: 0;
     background-color: red;
@@ -279,4 +273,89 @@ form button:hover{
     position: absolute;
     bottom: 20px;
     left: 25px;
+}
+
+/*HOME*/
+#gridNoticias{
+    position: relative;
+    width: 85%;
+    display: grid;
+    margin: 20px auto;
+    grid-template-columns: 2.5fr 1fr;
+    grid-template-areas: 
+    'noticia1 noticia2'
+    'noticia1 noticia3';
+    justify-items: flex-start;
+    gap: 30px; 
+}
+
+#apresentacao{
+    display: flex;
+    align-items: flex-end
+}
+
+#apresentacao h1{
+    font-size: 3em;
+}
+
+#apresentacao span{
+    display: block;
+    margin-left: 10px;
+    font-size: 0.8em;
+    color: #000000;
+    position: relative;
+    bottom: 1vh;
+}
+
+
+.noticias img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 25px;
+}
+
+.noticia1{
+    position: relative;
+    grid-area: noticia1;
+}
+
+.conteudo{
+    position: absolute;
+    padding: 5px 10px;
+    top: 40px;
+    right: 40px;
+    width: 20vw;
+    cursor: default;
+}
+
+.conteudo span{
+    width: fit-content;
+    padding: 5px 20px;
+    background-color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+.conteudo>h3{
+    padding: 5px 15px;
+    background-color: white;
+    border-radius:0 15px 15px 15px;
+}
+
+.seta{
+    position: absolute;
+    bottom: 50px;
+    right: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-weight: 800;
+}
+
+.noticia2{
+    grid-area: noticia2;
+}
+.noticia3{
+    grid-area: noticia3;
 }
