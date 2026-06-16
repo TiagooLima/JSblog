@@ -19,11 +19,36 @@ app.use(session({
         maxAge: 1000*60*10 
     }
 }))
-app.use((req, res, next) => {
+
+/*qntd de noticias*/
+let contagem = '...'
+const atualizarContagem = async () => {
+    console.time('qtd')
+    const {count, err} = await supabase.from('noticias').select('*', { count: 'exact', head: true })
+    console.timeEnd('qtd')
+
+    if(err){
+        console.log('Erro:', err)
+        return
+    }
+    contagem = count
+    return contagem
+    
+
+}
+
+atualizarContagem()
+// atualiza a cada 5 minutos
+setInterval(atualizarContagem, 5 * 60 * 1000)
+
+
+app.use(async(req, res, next) => {
     res.locals.usuario = req.session.usuario
     res.locals.logado = !!req.session.usuario
+    res.locals.qtd = contagem
     next()
 })
+
 
 /*
 ROTAS
@@ -57,12 +82,12 @@ app.get('/', async (req, res) => {
         console.log(err);
     }
 
-    const noticia1 = data[0]
+    /* const noticia1 = data[0]
     const noticia2 = data[1]
-    const noticia3 = data[2]
+    const noticia3 = data[2] */
     
 
-    res.render('home', {noticia1, noticia2, noticia3})
+    res.render('home', /* {noticia1, noticia2, noticia3} */)
 })
 
 app.listen(3000, () => {
