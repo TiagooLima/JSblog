@@ -355,6 +355,25 @@ form button:hover{
 .noticia2{
     grid-area: noticia2;
 }
+
 .noticia3{
     grid-area: noticia3;
 }
+
+#bannerSecundario{
+    padding: 75px;
+    background-color: rgb(255, 206, 122);
+    display: flex;
+    justify-content: center;
+}
+
+#bannerSecundario h1{
+    flex-grow: 1;
+}
+
+#bannerSecundario p{
+    max-width: 50%;
+}
+
+
+

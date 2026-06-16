@@ -49,11 +49,9 @@ app.use(async(req, res, next) => {
     next()
 })
 
-
 /*
 ROTAS
 */
-
 //login
 const rotaLogin = require('./routes/login')
 app.use('/login', rotaLogin)
