@@ -5,46 +5,47 @@
                 <a href=""><span>Veja todos os posts &#x2192;</span></a>
             </div>
         <div id="gridNoticias">
+
             
-            
-                <div class="noticia1 noticias">
-                    <a href="">
-                        <img src="/imgs/imgnoticia.png" alt="">
-                        <div class="conteudo">
-                            <span>JavaScript</span>
-                            <h3>Descubra como melhorar a segurança das suas aplicações em node.js</h3>
-                        </div>
-                        <button class="seta">&#x2197;</button>
-                    </a>
+            <a href="" class="noticia1 noticias">
+                <img src="{{noticia2.img1}}" alt="">
+                <div class="conteudo conteudo-cima">
+                    <span>JavaScript</span>
+                    <h3>{{noticia2.nome_noticia}}</h3>
                 </div>
+                <button class="seta">&#x2197;</button>
+            </a>
             
 
-            <a href="">
-                <div class="noticia2 noticias">
-                    <img src="{{noticia1.img1}}" alt="">
-                    {{!-- <h3>{{noticia1.nome_noticia}}</h3>
-                    <span>{{noticia1.criado_em}}</span> --}}
+            <a href="" class="noticia2 noticias">
+                <img src="{{noticia4.img1}}" alt="">
+                <img src="/imgs/imgnoticia.png" alt="">
+                    <div class="conteudo conteudo-esquerda-baixo">
+                        <span>JavaScript</span>
+                        <h3>{{noticia4.nome_noticia}}</h3>
+                    </div>
+            </a>
+
+            <a href="" class="noticia3 noticias">
+                <img src="{{noticia1.img1}}" alt="">
+                <div class="conteudo conteudo-esquerda-baixo">
+                        <span>JavaScript</span>
+                        <h3>{{noticia1.nome_noticia}}</h3>
                 </div>
             </a>
-            <a href="">
-                <div class="noticia3 noticias">
-                    <img src="{{noticia1.img1}}" alt="">
-                    {{!-- <h3>{{noticia1.nome_noticia}}</h3>
-                    <span>{{noticia1.criado_em}}</span> --}}
+
+            <a href="" class="noticia4 noticias">
+                <img src="{{noticia3.img1}}" alt="">
+                <div class="conteudo conteudo-esquerda-baixo" >
+                        <span style="background-color: rgb(34, 34, 34); color:white">JavaScript</span>
+                        <h3 style="background-color: rgb(34, 34, 34); color:white">{{noticia3.nome_noticia}}</h3>
                 </div>
             </a>
-            <a href="">
-                <div class="noticia3 noticias">
-                    <img src="{{noticia1.img1}}" alt="">
-                    {{!-- <h3>{{noticia1.nome_noticia}}</h3>
-                    <span>{{noticia1.criado_em}}</span> --}}
-                </div>
-            </a>
-            
-        </div>  
+        </div>
     </div>
     <div id="bannerSecundario">
         <h1>O que é JavaScript?</h1>
         <p>O JavaScript é uma linguagem de programação de alto nível usada principalmente para criar interatividade, dinamismo e comportamento inteligente em páginas da web e aplicativos. Ele é executado diretamente nos navegadores dos usuários e é um dos pilares fundamentais da internet.</p>
     </div>
+    
 </main>

@@ -16,7 +16,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        maxAge: 1000*60*35 //35 minutos
+        maxAge: 1000*60*120 //35 minutos
     }
 }))
 
@@ -82,11 +82,12 @@ app.get('/', async (req, res) => {
     }
 
     const noticia1 = data[0]
-    const noticia2 = data[0]
-    const noticia3 = data[0]
-    
+    const noticia2 = data[1]
+    const noticia3 = data[2]
+    const noticia4 = data[3]
+    /* console.log(noticia1, noticia2, noticia3, noticia4); */
 
-    res.render('home',  {noticia1, noticia2, noticia3} )
+    res.render('home',  {noticia1, noticia2, noticia3, noticia4} )
 })
 
 app.listen(3000, () => {
