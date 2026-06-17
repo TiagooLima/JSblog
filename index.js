@@ -16,7 +16,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        maxAge: 1000*60*10 
+        maxAge: 1000*60*35 //35 minutos
     }
 }))
 
@@ -33,8 +33,6 @@ const atualizarContagem = async () => {
     }
     contagem = count
     return contagem
-    
-
 }
 
 atualizarContagem()
@@ -43,7 +41,7 @@ setInterval(atualizarContagem, 5 * 60 * 1000)
 
 
 app.use(async(req, res, next) => {
-    res.locals.usuario = req.session.usuario
+    res.locals.usuario = req.session.usuario 
     res.locals.logado = !!req.session.usuario
     res.locals.qtd = contagem
     next()
@@ -64,10 +62,13 @@ app.get('/logout', (req, res) => {
     }
 
     res.clearCookie('connect.sid'); 
-
     res.redirect('/');
   });
 });
+
+//rota minha conta
+const rotaMinhaConta = require('./routes/minhaconta')
+app.use('/minhaconta', rotaMinhaConta)
 
 //cadastro
 const rotaCadastro = require('./routes/cadastro')
@@ -80,12 +81,12 @@ app.get('/', async (req, res) => {
         console.log(err);
     }
 
-    /* const noticia1 = data[0]
-    const noticia2 = data[1]
-    const noticia3 = data[2] */
+    const noticia1 = data[0]
+    const noticia2 = data[0]
+    const noticia3 = data[0]
     
 
-    res.render('home', /* {noticia1, noticia2, noticia3} */)
+    res.render('home',  {noticia1, noticia2, noticia3} )
 })
 
 app.listen(3000, () => {

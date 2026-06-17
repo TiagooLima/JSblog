@@ -46,13 +46,13 @@ header>.margem{
     align-items: center;
 }
 
-header ul{
+header .margem>ul{
     list-style-type: none;
     flex-grow: 1;
     display: flex;
 }
 
-header ul a{
+header .margem>ul a{
     font: 450 1em poppins, rubik, sans-serif;
     padding: 10px 20px;
     margin-left: 25px;
@@ -61,7 +61,7 @@ header ul a{
     position: relative;
 }
 
-header ul a:hover{
+header .margem>ul a:hover{
     background-color: rgb(231, 231, 231);
 }
 
@@ -74,9 +74,11 @@ header a>span{
 .finalHeader{
     display: flex;
     align-items: center;
+    position: relative;
+    
 }
 
-.finalHeader a{
+.finalHeader>a{
     margin-left: 10px;
     padding: 5px 10px;
     border: 3px solid var(--laranja-botoes);
@@ -86,10 +88,91 @@ header a>span{
     transition: 0.2s ease;
 }
 
-.finalHeader a:hover{
+.finalHeader>a:hover{
     background-color: var(--laranja-botoes);
     color: white;
 }
+
+.finalHeader button{
+    border: none;
+    background: white;
+    font: 450 1em rubik, poppins, sans-serif;
+    padding: 5px 5px 5px 5px;
+}
+
+
+
+#botaoConta{
+    cursor: pointer;
+    padding: 5px 15px;
+    border: 3px solid var(--laranja-botoes);
+    transition: 0.13s ease;
+}
+
+.bordaCompleta{
+    border-radius: 10px;
+}
+
+.bordaImcompleta{
+    border-radius: 10px 10px 0 0;
+    border-bottom-width: 0px !important;
+    
+}
+
+#seta{ /* seta do header */
+    margin: 0px 2px;
+    position: relative;
+    top: 2px;
+    width: 15px;
+    transition: transform 0.2s ease;
+}
+
+.cima{
+    transform: rotate(-90deg);
+}
+
+.baixo{
+    transform: rotate(90deg);
+}
+
+
+#menuFlutuante{
+    width: 15vw;
+    position: absolute;
+    background-color: white;
+    
+    border: 3px solid var(--laranja-botoes);
+    border-top: 0;
+    border-radius: 0 0 15px 15px;
+    left: -0px;
+    width: 100%;
+    text-align: center;
+    top: 100%;
+    z-index: 100;
+    
+    transition: opacity 0.3s ease;
+}
+
+#menuFlutuante ul{
+    list-style-type: none;
+}
+
+#menuFlutuante li{
+    margin: 15px 0;
+}
+
+#menuFlutuante a{
+    padding: 5px 10px;
+    font: 450 1em rubik, poppins;
+}
+
+.desativado {
+    opacity: 0;
+}
+
+
+
+
 
 /*Login Page*/
 
@@ -280,12 +363,13 @@ form button:hover{
     width: 85%;
     display: grid;
     margin: 20px auto;
-    grid-template-columns: 2.5fr 1fr;
+    grid-template-columns: 2.7fr 1fr;
     grid-template-areas: 
     'noticia1 noticia2'
-    'noticia1 noticia3';
+    'noticia1 noticia3'
+    'noticia1 noticia4';
     justify-items: flex-start;
-    gap: 30px; 
+    gap: 15px; 
 }
 
 #apresentacao{
@@ -365,6 +449,8 @@ form button:hover{
     background-color: rgb(255, 206, 122);
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 50px 0;
 }
 
 #bannerSecundario h1{
@@ -373,6 +459,72 @@ form button:hover{
 
 #bannerSecundario p{
     max-width: 50%;
+}
+
+/* pagina de minha conta */
+#minhaConta {
+    width: 75vw;
+    margin: 10px auto;
+
+}
+#minhaConta h2{
+    font-family: poppins, sans-serif;
+    font-size: 2em;
+}
+
+#card-minhaconta{
+    display: flex;
+    min-height: 50vh;
+}
+
+#card-minhaconta aside{
+    padding: 5px 10px 5px 5px;
+    border: 2px solid rgb(224, 224, 224);
+    border-radius: 20px;
+}
+
+#card-minhaconta aside ul{
+    list-style-type: none
+}
+
+#card-minhaconta aside li{
+    margin: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#card-minhaconta aside li img{
+    width: 20px;
+    margin: 0 10px 0 0;
+}
+
+#card-minhaconta aside li span{
+    position: relative;
+    top: -4.5px;
+}
+
+#card-minhaconta aside li a{
+    padding: 10px 15px 5px 15px;
+    border-radius: 15px;
+    width: 100%;
+}
+
+aside li a:hover{
+    background-color: #eeeeee;
+    
+}
+
+.principal a[href='/minhaconta'],
+.favoritos a[href='/minhaconta/favoritos'],
+.config a[href='/minhaconta/config']{
+    background-color: rgba(255, 255, 0, 0.151);
+    border-radius: 15px;
+    font: 525 1.1em poppins, sans-serif;
+    color: rgb(37, 37, 0);
+}
+
+#card-minhaconta section{
+    padding: 0px 10px;
 }
 
 

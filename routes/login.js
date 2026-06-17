@@ -39,7 +39,8 @@ router.post('/', async (req, res) => {
 
     req.session.usuario = ({
         email: email,
-        P_nome: data[0].nome.split(' ')[0]
+        P_nome: data[0].nome.split(' ')[0],
+        nome: data[0].nome
     })
 
     console.timeEnd('login-total')

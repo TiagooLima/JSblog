@@ -24,8 +24,18 @@
 
                 {{#if logado}}
                     <div class="finalHeader">
-                        <p>Bem vindo, {{usuario.P_nome}}</p>
-                        <a href="/logout">Deslogar</a>
+                        
+                            <button id="botaoConta" class="bordaCompleta">Bem vindo, {{usuario.P_nome}} <img id="seta" class="cima" src="/imgs/seta.jpg"></button>
+                            <div id="menuFlutuante" class="desativado">
+                                <ul>
+                                    <li><a href="/minhaconta">Minha Conta</a></li>
+                                    <li><a href="/minhaconta/favoritos">Favoritos</a></li>
+                                    <li><a href="/minhaconta/config">Configurações</a></li>
+                                    <li><a href="/logout">Deslogar</a></li>
+                                </ul>
+                            </div>
+                        
+                        <script src="/js/menuflutuante.js"></script>
                     </div>
                 {{else}}
                     <div class="finalHeader">
