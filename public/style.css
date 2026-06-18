@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root{
-    --laranja-botoes: rgb(255, 208, 0)
+    --laranja-botoes: rgb(255, 208, 0);
 }
 
 *{
@@ -19,6 +19,24 @@ body{
 a{
     text-decoration: none;
     color: black;
+}
+
+form button,
+.botaoDefault{
+    padding: 5px 15px;
+    border: 3px solid rgb(255, 208, 0);
+    font: 450 1.2em rubik, poppins, sans-serif;
+    height: fit-content;
+    border-radius: 25px;
+    transition: 0.2s ease;
+    background-color: white;
+}
+
+form button:hover,
+.botaoDefault:hover{
+    background-color: rgb(255, 208, 0);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
 }
 
 /***layouts***/
@@ -157,7 +175,6 @@ header a>span{
     width: 15vw;
     position: absolute;
     background-color: white;
-    
     border: 3px solid var(--laranja-botoes);
     border-top: 0;
     border-radius: 0 0 15px 15px;
@@ -166,7 +183,6 @@ header a>span{
     text-align: center;
     top: 100%;
     z-index: 100;
-    
     transition: opacity 0.3s ease;
 }
 
@@ -256,7 +272,7 @@ form input:focus{
     outline: none
 }
 
-#senha{
+#senha, .senha{
     font-size: 2em;
 }
 
@@ -333,22 +349,6 @@ form input:focus{
     font-weight: 350;
     font-size: 1.1em;
     padding: 10px;
-}
-
-form button{
-    padding: 5px 15px;
-    border: 3px solid rgb(255, 208, 0);
-    font: 450 1.2em rubik, poppins, sans-serif;
-    height: fit-content;
-    border-radius: 25px;
-    transition: 0.2s ease;
-    background-color: white;
-}
-
-form button:hover{
-    background-color: rgb(255, 208, 0);
-    color: rgb(95, 95, 95);
-    cursor: pointer;
 }
 
 #resultado{
@@ -569,14 +569,14 @@ form button:hover{
 }
 
 #card-minhaconta aside li a{
-    padding: 10px 15px 5px 15px;
+    padding: 7px 15px;
+    margin: 5px 5px;
     border-radius: 15px;
-    width: 100%;
+    width: 12vw;
 }
 
 .aside li a:hover{
     background-color: #eeeeee;
-    
 }
 
 .principal a[href='/minhaconta'],
@@ -585,11 +585,27 @@ form button:hover{
     background-color: rgba(255, 255, 0, 0.151);
     border-radius: 15px;
     font: 525 1.1em poppins, sans-serif;
-    color: rgb(37, 37, 0);
+    color: rgb(139, 126, 0);
 }
 
-#card-minhaconta section{
-    padding: 0px 10px;
+#card-minhaconta>section{
+    padding: 0px 20px 0 20px;
+}
+
+/* PAGINA PRINCIPAL MINHA CONTA */
+
+section>section>div{
+    display: flex;
+    align-items: center;
+}
+
+section>div>img{
+    width: 100px;
+    margin: 0 25px 0 0;
+}
+
+section>div>h2{
+    margin: 0px 25px 0 0;
 }
 
 

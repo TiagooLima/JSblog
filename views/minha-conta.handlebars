@@ -3,6 +3,7 @@
     <h2>Minha Conta</h2>
     <div id="card-minhaconta" class="{{classe}}">
         {{!-- menu lateral --}}
+
         <aside>
             <ul>
                 <li><a href="/minhaconta"><img src="/imgs/icones/conta.png" alt=""><span>Minha Conta</span></a></li>
@@ -11,29 +12,40 @@
                 <li><a href="/logout"><img src="/imgs/icones/botao-de-logout-da-web.png" alt=""><span>Deslogar</span></a></li>
             </ul>
         </aside>
+
         <section>
             {{#if minhaconta}}
-                <div>
+                <section>
                     <img src="" alt="">
                     <div>
+                        <img src="/imgs/default-user.png" alt="">
                         <h2>{{usuario.nome}}</h2>
-                        <button>Editar foto de conta</button>
+                        <button class="botaoDefault">Editar foto de conta</button>
                     </div>
-                </div>
+                </section>
                 <form>
-                    <table>
-                        <tr>
-                            <td><label for="">Nome completo</label></td>
-                            <td><input type="text"></td>
-                        </tr>
-                        <tr>
-                            <td><label for="">E-mail</label></td>
-                            <td><input type="text"></td>
-                        </tr>
-                    </table>
-                    
+                
+                    <label for="">Nome completo</label><br>
+                    <input type="text"><br>
+                
+                    <label for="">E-mail</label><br>
+                    <input type="text"><br>
+                
+                    <label for="">Senha</label><br>
+                    <input type="password" id="senha" class="senha"><br>
+                
+                    <label for="">Confirmar senha</label><br>
+                    <input type="password" id="senha2" class="senha"><br>
+
+                    <div class="checkboxDiv">
+                        <input type="checkbox" class="checkboxInput">
+                        <span>Ver senha</span>
+                    </div>
+                
+                    <button type="submit">Confirmar mudanças</button>
                     
                 </form>
+                <script src="/js/botaoversenha.js"></script>
                 
             {{/if}}
             {{#if favorito}}

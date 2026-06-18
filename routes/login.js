@@ -6,6 +6,7 @@ const supabase = require('../db')
 router.get('/', (req,res) => {
     res.render('login')
 })
+
 router.post('/', async (req, res) => {
     console.time('login-total')
 
