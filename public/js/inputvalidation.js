@@ -17,6 +17,7 @@ checkSenha.addEventListener('click', e => {
     }
 })
 
+/* formulario de cadastro */
 if(formCadastro){
     formCadastro.addEventListener('submit', async e => {
         e.preventDefault()
@@ -50,6 +51,7 @@ if(formCadastro){
     })
 }
 
+/* formulario de login */
 if(formLogin){
     formLogin.addEventListener('submit', async e => {
         e.preventDefault()
@@ -80,4 +82,4 @@ if(formLogin){
 
         window.location.href = '/'
     })
-}
+} 

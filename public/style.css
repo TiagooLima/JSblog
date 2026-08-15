@@ -377,10 +377,10 @@ form input:focus{
 /*HOME*/
 #gridNoticias{
     width: 95%;
-    height: 65vh;
+    height: 70vh;
     margin: 20px auto;
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-areas:
         "noticia1 noticia2"
         "noticia1 noticia3"
