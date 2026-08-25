@@ -1,20 +1,20 @@
 const checkSenha = document.querySelector('.checkboxInput')
-const inputSenha = document.getElementById('senha')
-const inputSenha2 = document.getElementById('senha2')
+const inputSenha = document.querySelectorAll('.senha')
+
 
 let c = 0
-checkSenha.addEventListener('click', e => {
+checkSenha.addEventListener('click', () => {
     if(c === 0){
-        inputSenha.style.fontSize = '1.2em'
-        inputSenha.setAttribute("type", "text");
-        inputSenha2.style.fontSize = '1.2em'
-        inputSenha2.setAttribute("type", "text");
+        inputSenha.forEach(input => {
+            input.style.fontSize = '1.2em'
+            input.setAttribute("type", "text");
+        })        
         c++
     }else{
-        inputSenha.setAttribute("type", "password");
-        inputSenha.style.fontSize = '2em'
-        inputSenha2.setAttribute("type", "password");
-        inputSenha2.style.fontSize = '2em'
+        inputSenha.forEach(input => {
+            input.setAttribute("type", "password");
+            input.style.fontSize = '2em'
+        })
         c--
     }
 })

@@ -51,6 +51,7 @@ router.post("/", async (req, res) => {
         }
 
         req.session.usuario = {
+            usuario_id: usuario.id,
             email: usuario.email,
             P_nome: usuario.nome.split(' ')[0],
             nome: usuario.nome

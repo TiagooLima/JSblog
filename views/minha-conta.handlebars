@@ -23,29 +23,30 @@
                         <button class="botaoDefault">Editar foto de conta</button>
                     </div>
                 </section>
-                <form>
+                <form id="update">
                 
                     <label for="">Nome completo</label><br>
-                    <input type="text" value="{{usuario.nome}}"><br>
+                    <input type="text" value="{{usuario.nome}}" id="nome"><br>
                 
                     <label for="">E-mail</label><br>
-                    <input type="text" value="{{usuario.email}}"><br>
+                    <input type="text" value="{{usuario.email}}" id="email"><br>
                 
-                    <label for="">Senha</label><br>
+                    <label for="senha">Senha</label><br>
                     <input type="password" id="senha" class="senha"><br>
                 
-                    <label for="">Confirmar senha</label><br>
+                    <label for="senha2">Confirmar senha</label><br>
                     <input type="password" id="senha2" class="senha"><br>
 
                     <div class="checkboxDiv">
                         <input type="checkbox" class="checkboxInput">
                         <span>Ver senha</span>
+                        <script src="/js/botaoversenha.js"></script>
                     </div>
                 
                     <button type="submit">Confirmar mudanças</button>
-                    
                 </form>
-                <script src="/js/botaoversenha.js"></script>
+                <div id="resultado" class="direita"></div>
+                <script src="/js/inputvalidation.js"></script>
                 
             {{/if}}
             {{#if favorito}}

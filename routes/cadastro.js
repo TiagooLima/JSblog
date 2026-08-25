@@ -3,7 +3,6 @@ const router = express.Router()
 const validator = require('validator')
 const supabase = require('../db')
 const bcrypt = require('bcrypt')
-const { CLIENT_RENEG_LIMIT } = require('node:tls')
 
 
 router.get('/', (req, res) => {
