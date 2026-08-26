@@ -54,7 +54,8 @@ router.post("/", async (req, res) => {
             usuario_id: usuario.id,
             email: usuario.email,
             P_nome: usuario.nome.split(' ')[0],
-            nome: usuario.nome
+            nome: usuario.nome,
+            avatar: usuario.avatar || '/imgs/default-user.png'
         }
 
         return res.status(200).json({

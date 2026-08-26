@@ -8,7 +8,8 @@ const session = require('express-session')
 const app = express()
 app.engine('handlebars', hbs.engine)
 app.set('view engine', 'handlebars')
-app.use(express.urlencoded({extended: true}))
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({limit: '10mb', extended: true}))
 app.use(express.json())
 app.use(express.static('public'))
 app.use(session({

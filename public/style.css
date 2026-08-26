@@ -599,8 +599,10 @@ section>section>div{
     align-items: center;
 }
 
-section>div>img{
-    width: 100px;
+.foto-perfil{
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
     margin: 0 25px 0 0;
 }
 

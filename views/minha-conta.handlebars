@@ -16,11 +16,13 @@
         <section>
             {{#if minhaconta}}
                 <section>
-                    <img src="" alt="">
                     <div>
-                        <img src="/imgs/default-user.png" alt="">
+                        <img class="foto-perfil" src={{avatar}} alt="Foto de perfil do usuário">
                         <h2>{{usuario.nome}}</h2>
-                        <button class="botaoDefault">Editar foto de conta</button>
+                        <form id="avatar-upgrade">
+                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+                            <button class="botaoDefault" type="submit">Editar foto de conta</button>
+                        </form>
                     </div>
                 </section>
                 <form id="update">
