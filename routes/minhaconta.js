@@ -145,10 +145,6 @@ router.post('/foto', async (req, res) => {
     
 })
 
-
-
-
-
 router.get('/favoritos', (req, res) => {
     if(req.session.usuario){
         res.render('minha-conta', {favorito: true, classe: 'favoritos'})
